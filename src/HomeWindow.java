@@ -1,17 +1,15 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class HomeWindow {
+public class HomeWindow extends JFrame {
     private JPanel HomeWindowPanel;
-    private JButton GerarHash;
-    private JTextField GerarHashCaminho;
-    private JButton CompararHash;
-    private JTextField CompararHashCaminho;
-    private JButton Sair;
+    private JButton GerarHash, CompararHashA, CompararHashB, Sair;
+    private JTextField GerarHashCaminho, CompararHashA_txt, CompararHashB_txt;
+    private static Image icon = Toolkit.getDefaultToolkit().getImage(".\\assets\\icon02_32.png");
 
-
-    public HomeWindow() {
+    public HomeWindow(){
         // Definição do botão Sair
         Sair.addActionListener(new ActionListener() {
             @Override
@@ -19,10 +17,12 @@ public class HomeWindow {
         });
     }
 
-    public static void main(String[] args) {
+    public static void main() {
         JFrame janela = new JFrame("JavaGeradorHash");
-        janela.setContentPane(new HomeWindow().HomeWindowPanel);
-        janela.setDefaultCloseOperation(janela.getDefaultCloseOperation());
-        janela.setVisible(true);
+            janela.setContentPane(new HomeWindow().HomeWindowPanel);
+            janela.setVisible(true);
+            janela.setIconImage(icon);
+            janela.setSize(500, 200);
+            janela.setResizable(false);
     }
 }
