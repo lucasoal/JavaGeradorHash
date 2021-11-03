@@ -5,24 +5,39 @@ import java.awt.event.ActionListener;
 
 public class HomeWindow extends JFrame {
     private JPanel HomeWindowPanel;
-    private JButton GerarHash, CompararHashA, CompararHashB, Sair;
-    private JTextField GerarHashCaminho, CompararHashA_txt, CompararHashB_txt;
+    private JButton GerarHashBtn,
+            CompararHashABtn,
+            CompararHashBBtn,
+            SairBtn;
+    private JTextField GerarHashCaminho,
+            CompararHashA_txt,
+            CompararHashB_txt;
     private static Image icon = Toolkit.getDefaultToolkit().getImage(".\\assets\\icon02_32.png");
 
     public HomeWindow(){
         // Definição do botão Sair
-        Sair.addActionListener(new ActionListener() {
+        SairBtn.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) { System.exit(0); }
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+        // Definição do botão GerarHash
+        GerarHashBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GerarHash.main();
+            }
         });
     }
 
     public static void main() {
         JFrame janela = new JFrame("JavaGeradorHash");
-            janela.setContentPane(new HomeWindow().HomeWindowPanel);
-            janela.setVisible(true);
-            janela.setIconImage(icon);
-            janela.setSize(500, 200);
-            janela.setResizable(false);
+        janela.setContentPane(new HomeWindow().HomeWindowPanel);
+        janela.setIconImage(icon);
+        janela.setVisible(true);
+        janela.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        janela.setSize(500, 200);
+        janela.setResizable(true);
     }
 }
