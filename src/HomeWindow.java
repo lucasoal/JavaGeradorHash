@@ -2,16 +2,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class HomeWindow extends JFrame {
     private JPanel HomeWindowPanel;
-    private JButton GerarHashBtn,
-            CompararHashABtn,
-            CompararHashBBtn,
-            SairBtn;
-    private JTextField GerarHashCaminho,
-            CompararHashA_txt,
-            CompararHashB_txt;
+    private JButton GerarHashBtn, SairBtn;
+    private JTextField GerarHashCaminho;
+    private JButton ProcurarBtn;
+    private JLabel Resultado;
+    private JTextArea façaOTeuMelhorTextArea;
+    private JLabel DateHour;
     private static Image icon = Toolkit.getDefaultToolkit().getImage(".\\assets\\icon02_32.png");
 
     public HomeWindow(){
@@ -37,7 +38,7 @@ public class HomeWindow extends JFrame {
         janela.setIconImage(icon);
         janela.setVisible(true);
         janela.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        janela.setSize(500, 200);
+        janela.setSize(570, 218);
         janela.setResizable(true);
     }
 }
