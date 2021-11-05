@@ -5,15 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class GerarHash {
 
-    private static boolean IsFinished = false;
-    private String pwd;
-    public LocalDateTime DataHora;
-
-    public void DataHora(){
-        DateTimeFormatter tempoFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-        LocalDateTime tempo = LocalDateTime.now();
-        System.out.println(tempoFormat.format(tempo));
-    }
+    private static boolean IsFinished;
 
     public static void main() {
         if(IsFinished == true)
