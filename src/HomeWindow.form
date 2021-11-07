@@ -100,6 +100,7 @@
           </grid>
         </constraints>
         <properties>
+          <enabled value="false"/>
           <font style="1"/>
           <foreground color="-1"/>
           <horizontalAlignment value="2"/>
@@ -113,6 +114,7 @@
           </grid>
         </constraints>
         <properties>
+          <enabled value="false"/>
           <font style="2"/>
           <foreground color="-1"/>
           <text value="04/11/2021 23:40:58"/>
@@ -135,6 +137,7 @@
           </grid>
         </constraints>
         <properties>
+          <enabled value="false"/>
           <font style="1"/>
           <foreground color="-1"/>
           <text value="Criptografia:"/>
@@ -149,7 +152,7 @@
         <properties>
           <background color="-1973791"/>
           <editable value="true"/>
-          <enabled value="true"/>
+          <enabled value="false"/>
           <focusable value="true"/>
           <font style="2"/>
           <foreground color="-15921907"/>

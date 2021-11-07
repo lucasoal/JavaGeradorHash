@@ -31,7 +31,7 @@ public class HomeWindow extends JFrame {
         GerarHashBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                GerarHash.main();
+                JOptionPane.showMessageDialog(null, "Botão clicado!");
             }
         });
     }
