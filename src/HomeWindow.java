@@ -2,12 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
 
 public class HomeWindow extends JFrame {
     private static Image icon = Toolkit.getDefaultToolkit().getImage(".\\assets\\icon02_32.png");
@@ -18,6 +13,8 @@ public class HomeWindow extends JFrame {
     private JTextArea HashResult;
     private JLabel TipoCript;
     private JTextField TipoCriptografia;
+
+
 
     public HomeWindow(){
         // Definição do botão Sair
@@ -31,7 +28,17 @@ public class HomeWindow extends JFrame {
         GerarHashBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Botão clicado!");
+                try {
+                    String WHhash;
+
+                    GerarHash.main();
+                    GerarHash hash = new GerarHash();
+                    WHhash = hash.hash;
+
+                    JOptionPane.showMessageDialog(null, "Hash Gerada com sucesso!\n" + WHhash);
+                } catch (NoSuchAlgorithmException ex) {
+                    ex.printStackTrace();
+                }
             }
         });
     }

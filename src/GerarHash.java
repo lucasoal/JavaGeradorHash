@@ -1,24 +1,16 @@
 import javax.swing.*;
-import java.awt.event.ActionListener;
-import java.io.DataOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.lang.invoke.MethodHandle;
 import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
 
 public class GerarHash {
 
     File stream = new File("./assets/JavaLogo.jpg");
     byte[] bytesEntradaHash = null, bytesSaidaHash = null;
     StringBuilder hashHexadecimal;
-    String hash = null;
+    String hash;
 
     public void SistemaArquivos() {
         if(stream.exists()){
@@ -33,7 +25,7 @@ public class GerarHash {
 
     }
 
-    public void MethodCalculaHash(String arquivo) throws NoSuchAlgorithmException {
+    public String MethodCalculaHash(String arquivo) throws NoSuchAlgorithmException {
         try {
             bytesEntradaHash = Files.readAllBytes(stream.toPath());
             MessageDigest algoritmoHash = MessageDigest.getInstance("MD5");
@@ -49,20 +41,18 @@ public class GerarHash {
             System.out.println(hash + "\n");
 
         } catch (IOException erro) {}
+        return hash;
     }
 
-    public static void main() throws NoSuchAlgorithmException  {
-        /*{
-            if (IsFinished == true)
-                JOptionPane.showMessageDialog(null, "Processo finalizado!");
-            else
-                JOptionPane.showMessageDialog(null, "Ops! Temos um problema." +
-                        "\nO processo não foi finalizado corretamente.");
-        }*/
+    public static String main() throws NoSuchAlgorithmException  {
         GerarHash FileSystem = new GerarHash();
         GerarHash Calcula = new GerarHash();
 
+        String hash = Calcula.hash;
+
         FileSystem.SistemaArquivos();
         Calcula.MethodCalculaHash("./assets/JavaLogo.jpg");
+
+        return hash;
     }
 }
