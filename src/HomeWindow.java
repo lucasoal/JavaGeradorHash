@@ -14,8 +14,6 @@ public class HomeWindow extends JFrame {
     private JLabel TipoCript;
     private JTextField TipoCriptografia;
 
-
-
     public HomeWindow(){
         // Definição do botão Sair
         SairBtn.addActionListener(new ActionListener() {
@@ -29,13 +27,7 @@ public class HomeWindow extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    String WHhash;
-
                     GerarHash.main();
-                    GerarHash hash = new GerarHash();
-                    WHhash = hash.hash;
-
-                    JOptionPane.showMessageDialog(null, "Hash Gerada com sucesso!\n" + WHhash);
                 } catch (NoSuchAlgorithmException ex) {
                     ex.printStackTrace();
                 }

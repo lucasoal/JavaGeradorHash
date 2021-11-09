@@ -1,9 +1,12 @@
 import javax.swing.*;
+import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Date;
 
 public class GerarHash {
 
@@ -11,6 +14,9 @@ public class GerarHash {
     byte[] bytesEntradaHash = null, bytesSaidaHash = null;
     StringBuilder hashHexadecimal;
     String hash;
+    FileOutputStream saida;
+    DataOutputStream escritor;
+    Date data = new Date(stream.lastModified());
 
     public void SistemaArquivos() {
         if(stream.exists()){
@@ -22,7 +28,6 @@ public class GerarHash {
             "Atenção!!!",
             JOptionPane.WARNING_MESSAGE);
         }
-
     }
 
     public String MethodCalculaHash(String arquivo) throws NoSuchAlgorithmException {
@@ -44,15 +49,22 @@ public class GerarHash {
         return hash;
     }
 
-    public static String main() throws NoSuchAlgorithmException  {
-        GerarHash FileSystem = new GerarHash();
-        GerarHash Calcula = new GerarHash();
+    public void MethodGeraArquivo(String hash){
+        try{
+            saida = new FileOutputStream("./log.txt");
+            escritor = new DataOutputStream(saida);
+//            JOptionPane.showMessageDialog(null, hash);
+            escritor.writeUTF("\n./assets/JavaLogo.jpg\t" + hash+ "\n");
+            saida.close();
+        }
+        catch (IOException erro){}
+    }
 
-        String hash = Calcula.hash;
-
-        FileSystem.SistemaArquivos();
-        Calcula.MethodCalculaHash("./assets/JavaLogo.jpg");
-
-        return hash;
+    public static void main() throws NoSuchAlgorithmException  {
+        GerarHash ClassGeraHash = new GerarHash();
+//        ClassGeraHash.SistemaArquivos();
+        String hash = ClassGeraHash.MethodCalculaHash("./assets/JavaLogo.jpg");
+        ClassGeraHash.MethodGeraArquivo(hash);
+        JOptionPane.showMessageDialog(null, "Hash Gerada com sucesso!\n\n" + hash);
     }
 }
