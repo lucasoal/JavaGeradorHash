@@ -54,7 +54,7 @@ public class GerarHash {
         try{
             saida = new FileOutputStream("./log.txt");
             escritor = new DataOutputStream(saida);
-//            JOptionPane.showMessageDialog(null, hash);
+//          JOptionPane.showMessageDialog(null, hash);
             escritor.writeUTF("\n./assets/JavaLogo.jpg\t" + hash+ "\n");
             saida.close();
         }

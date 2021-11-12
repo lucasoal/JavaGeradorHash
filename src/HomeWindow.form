@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="HomeWindow">
-  <grid id="27dc6" binding="HomeWindowPanel" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="5" vgap="5">
+  <grid id="27dc6" binding="HomeWindowPanel" layout-manager="GridLayoutManager" row-count="3" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="5" vgap="5">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="8" y="10" width="388" height="108"/>
+      <xy x="8" y="10" width="479" height="108"/>
     </constraints>
     <properties>
       <background color="-14737633"/>
@@ -18,7 +18,7 @@
     <children>
       <component id="62de6" class="javax.swing.JButton" binding="SairBtn">
         <constraints>
-          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-4583133"/>
@@ -28,9 +28,9 @@
           <toolTipText value="Close the application"/>
         </properties>
       </component>
-      <component id="b5311" class="javax.swing.JTextField" binding="GerarHashCaminho">
+      <component id="b5311" class="javax.swing.JTextField" binding="GeraHashCaminho">
         <constraints>
-          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
@@ -48,11 +48,11 @@
       </component>
       <component id="97bda" class="javax.swing.JButton" binding="ProcurarBtn">
         <constraints>
-          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-11513776"/>
-          <enabled value="true"/>
+          <enabled value="false"/>
           <foreground color="-1973791"/>
           <text value="Procurar"/>
         </properties>
@@ -87,7 +87,7 @@
       </component>
       <component id="ff168" class="javax.swing.JButton" binding="GerarHashBtn">
         <constraints>
-          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-11688636"/>
@@ -95,6 +95,48 @@
           <text value="Gerar Hash"/>
         </properties>
       </component>
+      <component id="aa06b" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="105" height="16"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font style="1"/>
+          <foreground color="-1973791"/>
+          <text value="Tipo de Hash:"/>
+        </properties>
+      </component>
+      <component id="4d399" class="javax.swing.JRadioButton" binding="MD5RadioButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-11513776"/>
+          <enabled value="false"/>
+          <font style="3"/>
+          <foreground color="-1973791"/>
+          <text value="MD5"/>
+        </properties>
+      </component>
+      <component id="61a8c" class="javax.swing.JRadioButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-11513776"/>
+          <enabled value="false"/>
+          <font style="3"/>
+          <foreground color="-1973791"/>
+          <text value="SHA1"/>
+        </properties>
+      </component>
     </children>
   </grid>
+  <buttonGroups>
+    <group name="HashType">
+      <member id="4d399"/>
+      <member id="61a8c"/>
+    </group>
+  </buttonGroups>
 </form>

@@ -8,7 +8,8 @@ public class HomeWindow extends JFrame {
     private static Image icon = Toolkit.getDefaultToolkit().getImage(".\\assets\\icon02_32.png");
     private JPanel  HomeWindowPanel;
     private JButton GerarHashBtn, SairBtn, ProcurarBtn;
-    private JTextField GerarHashCaminho;
+    private JTextField GeraHashCaminho;
+    private JRadioButton MD5RadioButton;
 
     public HomeWindow(){
         // Definição do botão Sair
@@ -24,6 +25,7 @@ public class HomeWindow extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     GerarHash.main();
+                    GeraHashCaminho.getText();
                 } catch (NoSuchAlgorithmException ex) {
                     ex.printStackTrace();
                 }
@@ -40,6 +42,5 @@ public class HomeWindow extends JFrame {
         janela.setSize(400, 140);
         janela.setResizable(true);
         janela.setLocationRelativeTo(null);
-
     }
 }
