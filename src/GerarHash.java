@@ -10,23 +10,24 @@ import java.util.Date;
 
 public class GerarHash {
 
-    File stream = new File("./assets/JavaLogo.jpg");
+    File stream;
+    Date data = new Date(stream.lastModified());
     byte[] bytesEntradaHash = null, bytesSaidaHash = null;
     StringBuilder hashHexadecimal;
     String hash;
     FileOutputStream saida;
     DataOutputStream escritor;
-    Date data = new Date(stream.lastModified());
 
     public void SistemaArquivos() {
         if(stream.exists()){
-            System.out.printf("Arquivo encontrado!\n");
+        JOptionPane.showMessageDialog(null,
+        "Arquivo encontrado!!!",
+        "Atenção!!!", JOptionPane.PLAIN_MESSAGE);
         }
         else {
-            JOptionPane.showMessageDialog(null,
-            "Arquivo '" + stream + "' não encontrado!!!",
-            "Atenção!!!",
-            JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null,
+        "Arquivo '" + stream + "' não encontrado!!!",
+        "Atenção!!!", JOptionPane.WARNING_MESSAGE);
         }
     }
 
@@ -61,10 +62,10 @@ public class GerarHash {
     }
 
     public static void main() throws NoSuchAlgorithmException  {
-        GerarHash ClassGeraHash = new GerarHash();
-//        ClassGeraHash.SistemaArquivos();
-        String hash = ClassGeraHash.MethodCalculaHash("./assets/JavaLogo.jpg");
-        ClassGeraHash.MethodGeraArquivo(hash);
-        JOptionPane.showMessageDialog(null, "Hash Gerada com sucesso!\n\n" + hash);
+        GerarHash GH = new GerarHash();
+        GH.SistemaArquivos();
+        //String hash = GH.MethodCalculaHash("./assets/JavaLogo.jpg");
+        //GH.MethodGeraArquivo(hash);
+        //JOptionPane.showMessageDialog(null, "Hash Gerada com sucesso!\n\n" + hash);
     }
 }

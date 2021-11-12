@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="HomeWindow">
-  <grid id="27dc6" binding="HomeWindowPanel" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="5" vgap="5">
+  <grid id="27dc6" binding="HomeWindowPanel" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="5" vgap="5">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="8" y="10" width="545" height="199"/>
+      <xy x="8" y="10" width="388" height="108"/>
     </constraints>
     <properties>
       <background color="-14737633"/>
@@ -18,11 +18,11 @@
     <children>
       <component id="62de6" class="javax.swing.JButton" binding="SairBtn">
         <constraints>
-          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-4583133"/>
-          <foreground color="-986896"/>
+          <foreground color="-1973791"/>
           <hideActionText value="false"/>
           <text value="Sair"/>
           <toolTipText value="Close the application"/>
@@ -41,7 +41,7 @@
           <focusable value="true"/>
           <font style="2"/>
           <foreground color="-15921907"/>
-          <text value="C:\Users\UserName\Desktop\FolderOrFile\ArquivoTexto.txt"/>
+          <text value=""/>
           <verifyInputWhenFocusTarget value="true"/>
           <visible value="true"/>
         </properties>
@@ -51,9 +51,9 @@
           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-1973791"/>
-          <enabled value="false"/>
-          <foreground color="-14737633"/>
+          <background color="-11513776"/>
+          <enabled value="true"/>
+          <foreground color="-1973791"/>
           <text value="Procurar"/>
         </properties>
       </component>
@@ -65,59 +65,24 @@
         </constraints>
         <properties>
           <font style="1"/>
-          <foreground color="-1"/>
+          <foreground color="-1973791"/>
           <text value="Local do Arquivo:"/>
-        </properties>
-      </component>
-      <component id="12858" class="javax.swing.JLabel" binding="Resultado">
-        <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="105" height="16"/>
-          </grid>
-        </constraints>
-        <properties>
-          <font style="1"/>
-          <foreground color="-1"/>
-          <text value="Resultado:"/>
-        </properties>
-      </component>
-      <component id="89c09" class="javax.swing.JTextArea" binding="HashResult">
-        <constraints>
-          <grid row="2" column="1" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="50"/>
-          </grid>
-        </constraints>
-        <properties>
-          <editable value="false"/>
-          <font style="2"/>
-          <text value="Faça o teu melhor, na condição que você tem, enquanto&#10;você não tem condições melhores, para fazer melhor ainda!&#10;&#10;MD5: e274953ad6e0a820a74c31ede19bcd0d"/>
         </properties>
       </component>
       <component id="e5a2b" class="javax.swing.JLabel">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="105" height="16"/>
           </grid>
         </constraints>
         <properties>
           <enabled value="false"/>
-          <font style="1"/>
+          <font size="10" style="2"/>
           <foreground color="-1"/>
           <horizontalAlignment value="2"/>
-          <text value="Data/Hora:"/>
-        </properties>
-      </component>
-      <component id="2b249" class="javax.swing.JLabel" binding="DateHour">
-        <constraints>
-          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="105" height="16"/>
-          </grid>
-        </constraints>
-        <properties>
-          <enabled value="false"/>
-          <font style="2"/>
-          <foreground color="-1"/>
-          <text value="04/11/2021 23:40:58"/>
+          <text value="by Lucas Omar 2021"/>
+          <verticalAlignment value="3"/>
+          <verticalTextPosition value="3"/>
         </properties>
       </component>
       <component id="ff168" class="javax.swing.JButton" binding="GerarHashBtn">
@@ -126,39 +91,8 @@
         </constraints>
         <properties>
           <background color="-11688636"/>
-          <foreground color="-986896"/>
+          <foreground color="-1973791"/>
           <text value="Gerar Hash"/>
-        </properties>
-      </component>
-      <component id="9929f" class="javax.swing.JLabel" binding="TipoCript">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="105" height="16"/>
-          </grid>
-        </constraints>
-        <properties>
-          <enabled value="false"/>
-          <font style="1"/>
-          <foreground color="-1"/>
-          <text value="Criptografia:"/>
-        </properties>
-      </component>
-      <component id="dce64" class="javax.swing.JTextField" binding="TipoCriptografia">
-        <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-1973791"/>
-          <editable value="true"/>
-          <enabled value="false"/>
-          <focusable value="true"/>
-          <font style="2"/>
-          <foreground color="-15921907"/>
-          <text value="MD5"/>
-          <verifyInputWhenFocusTarget value="true"/>
-          <visible value="true"/>
         </properties>
       </component>
     </children>

@@ -9,10 +9,6 @@ public class HomeWindow extends JFrame {
     private JPanel  HomeWindowPanel;
     private JButton GerarHashBtn, SairBtn, ProcurarBtn;
     private JTextField GerarHashCaminho;
-    private JLabel Resultado, DateHour;
-    private JTextArea HashResult;
-    private JLabel TipoCript;
-    private JTextField TipoCriptografia;
 
     public HomeWindow(){
         // Definição do botão Sair
@@ -41,7 +37,9 @@ public class HomeWindow extends JFrame {
         janela.setIconImage(icon);
         janela.setVisible(true);
         janela.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        janela.setSize(570, 218);
+        janela.setSize(400, 140);
         janela.setResizable(true);
+        janela.setLocationRelativeTo(null);
+
     }
 }
