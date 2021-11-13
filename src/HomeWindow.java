@@ -9,9 +9,11 @@ public class HomeWindow extends JFrame {
     private JPanel  HomeWindowPanel;
     private JButton GerarHashBtn, SairBtn, ProcurarBtn;
     private JTextField GeraHashCaminho;
-    private JRadioButton MD5RadioButton;
-
-    public HomeWindow(){
+    private JRadioButton MD5Btn;
+    private JRadioButton SHABtn;
+    public String SetHashType;
+    public HomeWindow()
+    {
         // Definição do botão Sair
         SairBtn.addActionListener(new ActionListener() {
             @Override
@@ -24,16 +26,24 @@ public class HomeWindow extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    GerarHash.main();
-                    GeraHashCaminho.getText();
+                    String pwd = GeraHashCaminho.getText();
+                    GerarHash.main(pwd,SetHashType);
+                    JOptionPane.showMessageDialog(null, SetHashType + " selecionada");
                 } catch (NoSuchAlgorithmException ex) {
                     ex.printStackTrace();
                 }
             }
         });
+        MD5Btn.addActionListener(new ActionListener() {
+            @Override public void actionPerformed(ActionEvent e) { SetHashType = "MD5"; }
+        });
+        SHABtn.addActionListener(new ActionListener() {
+            @Override public void actionPerformed(ActionEvent e) { SetHashType = "SHA"; }
+        });
     }
 
-    public static void main() {
+    public static void main()
+    {
         JFrame janela = new JFrame("JavaGeradorHash");
         janela.setContentPane(new HomeWindow().HomeWindowPanel);
         janela.setIconImage(icon);

@@ -9,32 +9,32 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 
 public class GerarHash {
-
     File stream;
-    Date data = new Date(stream.lastModified());
     byte[] bytesEntradaHash = null, bytesSaidaHash = null;
     StringBuilder hashHexadecimal;
     String hash;
     FileOutputStream saida;
     DataOutputStream escritor;
 
-    public void SistemaArquivos() {
+    public void SistemaArquivos(String pwd) {
+        File stream = new File(pwd);
         if(stream.exists()){
-        JOptionPane.showMessageDialog(null,
-        "Arquivo encontrado!!!",
-        "Atenção!!!", JOptionPane.PLAIN_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Nome: " + stream.getName()
+                + "\nTamanho: " + stream.length() + " bytes\nE um arquivo? " + stream.isFile()
+                + "\nE um diretorio? " + stream.isDirectory() + "\nPode acessar para ler? " + stream.canRead()
+                ,"Arquivo Encontrado", JOptionPane.PLAIN_MESSAGE);
         }
         else {
         JOptionPane.showMessageDialog(null,
-        "Arquivo '" + stream + "' não encontrado!!!",
-        "Atenção!!!", JOptionPane.WARNING_MESSAGE);
+        "Arquivo (" + stream + ") não encontrado!!!","Atenção!!!", JOptionPane.ERROR_MESSAGE);
         }
     }
 
-    public String MethodCalculaHash(String arquivo) throws NoSuchAlgorithmException {
+    public String MethodCalculaHash(String pwd, String hsh) throws NoSuchAlgorithmException {
+        File arquivo = new File(pwd);
         try {
-            bytesEntradaHash = Files.readAllBytes(stream.toPath());
-            MessageDigest algoritmoHash = MessageDigest.getInstance("MD5");
+            bytesEntradaHash = Files.readAllBytes(arquivo.toPath());
+            MessageDigest algoritmoHash = MessageDigest.getInstance(hsh);
             bytesSaidaHash = algoritmoHash.digest(bytesEntradaHash);
 
             hashHexadecimal = new StringBuilder();
@@ -42,7 +42,7 @@ public class GerarHash {
                 hashHexadecimal.append(String.format("%02X", 0xFF & b));
             }
 
-            System.out.println("Sequência de Bytes da HASH Gerada pelo Algoritmo MD5");
+            System.out.println("Sequência de Bytes da HASH Gerada pelo Algoritmo");
             hash = hashHexadecimal.toString();
             System.out.println(hash + "\n");
 
@@ -50,22 +50,21 @@ public class GerarHash {
         return hash;
     }
 
-    public void MethodGeraArquivo(String hash){
+    public void MethodGeraArquivo(String pwd,String hash){
         try{
             saida = new FileOutputStream("./log.txt");
             escritor = new DataOutputStream(saida);
-//          JOptionPane.showMessageDialog(null, hash);
-            escritor.writeUTF("\n./assets/JavaLogo.jpg\t" + hash+ "\n");
+            escritor.writeUTF("\n" + pwd + "\t" + hash + "\n");
             saida.close();
         }
         catch (IOException erro){}
     }
 
-    public static void main() throws NoSuchAlgorithmException  {
+    public static void main(String pwd, String hsh) throws NoSuchAlgorithmException  {
         GerarHash GH = new GerarHash();
-        GH.SistemaArquivos();
-        //String hash = GH.MethodCalculaHash("./assets/JavaLogo.jpg");
-        //GH.MethodGeraArquivo(hash);
-        //JOptionPane.showMessageDialog(null, "Hash Gerada com sucesso!\n\n" + hash);
+        GH.SistemaArquivos(pwd);
+
+        String hash = GH.MethodCalculaHash(pwd,hsh);
+        GH.MethodGeraArquivo(pwd,hash);
     }
 }

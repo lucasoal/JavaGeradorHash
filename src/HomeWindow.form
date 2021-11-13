@@ -41,7 +41,7 @@
           <focusable value="true"/>
           <font style="2"/>
           <foreground color="-15921907"/>
-          <text value=""/>
+          <text value="./assets/teste.txt"/>
           <verifyInputWhenFocusTarget value="true"/>
           <visible value="true"/>
         </properties>
@@ -107,28 +107,28 @@
           <text value="Tipo de Hash:"/>
         </properties>
       </component>
-      <component id="4d399" class="javax.swing.JRadioButton" binding="MD5RadioButton" default-binding="true">
+      <component id="4d399" class="javax.swing.JRadioButton" binding="MD5Btn">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-11513776"/>
-          <enabled value="false"/>
+          <enabled value="true"/>
           <font style="3"/>
           <foreground color="-1973791"/>
           <text value="MD5"/>
         </properties>
       </component>
-      <component id="61a8c" class="javax.swing.JRadioButton" default-binding="true">
+      <component id="61a8c" class="javax.swing.JRadioButton" binding="SHABtn">
         <constraints>
           <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-11513776"/>
-          <enabled value="false"/>
+          <enabled value="true"/>
           <font style="3"/>
           <foreground color="-1973791"/>
-          <text value="SHA1"/>
+          <text value="SHA"/>
         </properties>
       </component>
     </children>
