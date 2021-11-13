@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="HomeWindow">
-  <grid id="27dc6" binding="HomeWindowPanel" layout-manager="GridLayoutManager" row-count="3" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="5" vgap="5">
+  <grid id="27dc6" binding="HomeWindowPanel" layout-manager="GridLayoutManager" row-count="4" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="5" vgap="5">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="8" y="10" width="479" height="108"/>
+      <xy x="8" y="10" width="367" height="143"/>
     </constraints>
     <properties>
       <background color="-14737633"/>
@@ -16,21 +16,9 @@
       <title-color color="-16777216"/>
     </border>
     <children>
-      <component id="62de6" class="javax.swing.JButton" binding="SairBtn">
-        <constraints>
-          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-4583133"/>
-          <foreground color="-1973791"/>
-          <hideActionText value="false"/>
-          <text value="Sair"/>
-          <toolTipText value="Close the application"/>
-        </properties>
-      </component>
       <component id="b5311" class="javax.swing.JTextField" binding="GeraHashCaminho">
         <constraints>
-          <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
@@ -39,8 +27,9 @@
           <editable value="true"/>
           <enabled value="true"/>
           <focusable value="true"/>
-          <font style="2"/>
+          <font name="Consolas" style="2"/>
           <foreground color="-15921907"/>
+          <horizontalAlignment value="2"/>
           <text value="./assets/teste.txt"/>
           <verifyInputWhenFocusTarget value="true"/>
           <visible value="true"/>
@@ -52,7 +41,7 @@
         </constraints>
         <properties>
           <background color="-11513776"/>
-          <enabled value="false"/>
+          <enabled value="true"/>
           <foreground color="-1973791"/>
           <text value="Procurar"/>
         </properties>
@@ -67,22 +56,6 @@
           <font style="1"/>
           <foreground color="-1973791"/>
           <text value="Local do Arquivo:"/>
-        </properties>
-      </component>
-      <component id="e5a2b" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="105" height="16"/>
-          </grid>
-        </constraints>
-        <properties>
-          <enabled value="false"/>
-          <font size="10" style="2"/>
-          <foreground color="-1"/>
-          <horizontalAlignment value="2"/>
-          <text value="by Lucas Omar 2021"/>
-          <verticalAlignment value="3"/>
-          <verticalTextPosition value="3"/>
         </properties>
       </component>
       <component id="ff168" class="javax.swing.JButton" binding="GerarHashBtn">
@@ -109,34 +82,92 @@
       </component>
       <component id="4d399" class="javax.swing.JRadioButton" binding="MD5Btn">
         <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-11513776"/>
           <enabled value="true"/>
           <font style="3"/>
           <foreground color="-1973791"/>
-          <text value="MD5"/>
+          <text value="MD5         "/>
+          <verticalAlignment value="3"/>
+          <verticalTextPosition value="0"/>
         </properties>
       </component>
-      <component id="61a8c" class="javax.swing.JRadioButton" binding="SHABtn">
+      <component id="62de6" class="javax.swing.JButton" binding="SairBtn">
         <constraints>
-          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-4583133"/>
+          <foreground color="-1973791"/>
+          <hideActionText value="false"/>
+          <text value="Sair"/>
+          <toolTipText value="Close the application"/>
+        </properties>
+      </component>
+      <component id="d0355" class="javax.swing.JButton" binding="HelpBtn">
+        <constraints>
+          <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14737633"/>
+          <foreground color="-11908534"/>
+          <hideActionText value="false"/>
+          <text value="Help"/>
+          <toolTipText value="Close the application"/>
+        </properties>
+      </component>
+      <component id="61a8c" class="javax.swing.JRadioButton" binding="SHA1Btn">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-11513776"/>
           <enabled value="true"/>
           <font style="3"/>
           <foreground color="-1973791"/>
-          <text value="SHA"/>
+          <text value="SHA-1     "/>
+        </properties>
+      </component>
+      <component id="7606c" class="javax.swing.JRadioButton" binding="SHA256Btn">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-11513776"/>
+          <enabled value="true"/>
+          <font style="3"/>
+          <foreground color="-1973791"/>
+          <text value="SHA-256"/>
+        </properties>
+      </component>
+      <component id="e5a2b" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="6" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="105" height="16"/>
+          </grid>
+        </constraints>
+        <properties>
+          <enabled value="false"/>
+          <font size="10" style="2"/>
+          <foreground color="-1"/>
+          <horizontalAlignment value="2"/>
+          <horizontalTextPosition value="2"/>
+          <text value="by Lucas Omar 2021"/>
+          <verticalAlignment value="3"/>
+          <verticalTextPosition value="3"/>
         </properties>
       </component>
     </children>
   </grid>
   <buttonGroups>
-    <group name="HashType">
+    <group name="buttonGroup1">
       <member id="4d399"/>
       <member id="61a8c"/>
+      <member id="7606c"/>
+      <member id="327f8"/>
+      <member id="4afad"/>
     </group>
   </buttonGroups>
 </form>

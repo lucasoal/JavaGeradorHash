@@ -9,19 +9,18 @@ public class HomeWindow extends JFrame {
     private JPanel  HomeWindowPanel;
     private JButton GerarHashBtn, SairBtn, ProcurarBtn;
     private JTextField GeraHashCaminho;
-    private JRadioButton MD5Btn;
-    private JRadioButton SHABtn;
+    private JRadioButton MD5Btn, SHA1Btn, SHA256Btn;
+    private JButton HelpBtn;
     public String SetHashType;
+
     public HomeWindow()
     {
-        // Definição do botão Sair
         SairBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.exit(0);
             }
         });
-        // Definição do botão GerarHash
         GerarHashBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -34,11 +33,25 @@ public class HomeWindow extends JFrame {
                 }
             }
         });
+        HelpBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null,
+                "1º Digite o caminho do diretório ou Procure-\n" +
+                        "2º Selecione um método para geração de hash. MD5, SHA-1 ou SHA-256\n" +
+                        "3º Clique no botão 'Gerar Hash' para que seja gerado o documento de referência das hashs\n" +
+                        "4º O 'log' com as informações da hash gerada estará na pasta raiz do programa ",
+                    "Help", JOptionPane.PLAIN_MESSAGE);
+            }
+        });
         MD5Btn.addActionListener(new ActionListener() {
             @Override public void actionPerformed(ActionEvent e) { SetHashType = "MD5"; }
         });
-        SHABtn.addActionListener(new ActionListener() {
-            @Override public void actionPerformed(ActionEvent e) { SetHashType = "SHA"; }
+        SHA1Btn.addActionListener(new ActionListener() {
+            @Override public void actionPerformed(ActionEvent e) { SetHashType = "SHA-1"; }
+        });
+        SHA256Btn.addActionListener(new ActionListener() {
+            @Override public void actionPerformed(ActionEvent e) { SetHashType = "SHA-256"; }
         });
     }
 
@@ -49,8 +62,8 @@ public class HomeWindow extends JFrame {
         janela.setIconImage(icon);
         janela.setVisible(true);
         janela.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        janela.setSize(400, 140);
         janela.setResizable(true);
+        janela.setSize(460, 165);
         janela.setLocationRelativeTo(null);
     }
 }

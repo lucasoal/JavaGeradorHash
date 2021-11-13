@@ -42,9 +42,8 @@ public class GerarHash {
                 hashHexadecimal.append(String.format("%02X", 0xFF & b));
             }
 
-            System.out.println("Sequência de Bytes da HASH Gerada pelo Algoritmo");
             hash = hashHexadecimal.toString();
-            System.out.println(hash + "\n");
+            System.out.println("\nSequência de Bytes da HASH Gerada pelo Algoritmo " + hash);
 
         } catch (IOException erro) {}
         return hash;
