@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -17,16 +18,20 @@ public class GerarHash {
     DataOutputStream escritor;
 
     public void SistemaArquivos(String pwd) {
-        File stream = new File(pwd);
-        if(stream.exists()){
-        JOptionPane.showMessageDialog(null,"Nome: " + stream.getName()
-                + "\nTamanho: " + stream.length() + " bytes\nE um arquivo? " + stream.isFile()
-                + "\nE um diretorio? " + stream.isDirectory() + "\nPode acessar para ler? " + stream.canRead()
-                ,"Arquivo Encontrado", JOptionPane.PLAIN_MESSAGE);
-        }
-        else {
-        JOptionPane.showMessageDialog(null,
-        "Arquivo (" + stream + ") não encontrado!!!","Atenção!!!", JOptionPane.ERROR_MESSAGE);
+        try{
+            stream = new File(pwd);
+            if(stream.exists()){
+                JOptionPane.showMessageDialog(null,"Nome: " + stream.getName()
+                        + "\nTamanho: " + stream.length() + " bytes\nE um arquivo? " + stream.isFile()
+                        + "\nE um diretorio? " + stream.isDirectory() + "\nPode acessar para ler? " + stream.canRead()
+                        ,"Arquivo Encontrado", JOptionPane.PLAIN_MESSAGE);
+            }
+            else {
+                JOptionPane.showMessageDialog(null,
+                "Arquivo (" + stream + ") não encontrado!!!","Atenção!!!", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (HeadlessException e) {
+            e.printStackTrace();
         }
     }
 
@@ -60,7 +65,9 @@ public class GerarHash {
     }
 
     public static void main(String pwd, String hsh) throws NoSuchAlgorithmException  {
-        GerarHash GH = new GerarHash();
+        GerarHash GH;
+        GH = new GerarHash();
+
         GH.SistemaArquivos(pwd);
 
         String hash = GH.MethodCalculaHash(pwd,hsh);

@@ -7,7 +7,7 @@ import java.security.NoSuchAlgorithmException;
 public class HomeWindow extends JFrame {
     private static Image icon = Toolkit.getDefaultToolkit().getImage(".\\assets\\icon02_32.png");
     private JPanel  HomeWindowPanel;
-    private JButton GerarHashBtn, SairBtn, ProcurarBtn;
+    private JButton GerarHashBtn, SairBtn;
     private JTextField GeraHashCaminho;
     private JRadioButton MD5Btn, SHA1Btn, SHA256Btn;
     private JButton HelpBtn;
@@ -26,6 +26,7 @@ public class HomeWindow extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     String pwd = GeraHashCaminho.getText();
+                    System.out.printf("Caminho: "+pwd);
                     GerarHash.main(pwd,SetHashType);
                     JOptionPane.showMessageDialog(null, SetHashType + " selecionada");
                 } catch (NoSuchAlgorithmException ex) {
@@ -63,7 +64,7 @@ public class HomeWindow extends JFrame {
         janela.setVisible(true);
         janela.setDefaultCloseOperation(EXIT_ON_CLOSE);
         janela.setResizable(true);
-        janela.setSize(460, 165);
+        janela.setSize(525, 155);
         janela.setLocationRelativeTo(null);
     }
 }

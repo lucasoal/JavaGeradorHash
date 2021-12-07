@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="HomeWindow">
-  <grid id="27dc6" binding="HomeWindowPanel" layout-manager="GridLayoutManager" row-count="4" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="5" vgap="5">
+  <grid id="27dc6" binding="HomeWindowPanel" layout-manager="GridLayoutManager" row-count="3" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="5" vgap="5">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="8" y="10" width="530" height="213"/>
@@ -30,20 +30,9 @@
           <font name="Consolas" style="2"/>
           <foreground color="-15921907"/>
           <horizontalAlignment value="2"/>
-          <text value="z'"/>
+          <text value="Caminho do arquivo. Ex: C:\User\Desktop"/>
           <verifyInputWhenFocusTarget value="true"/>
           <visible value="true"/>
-        </properties>
-      </component>
-      <component id="97bda" class="javax.swing.JButton" binding="ProcurarBtn">
-        <constraints>
-          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-11513776"/>
-          <enabled value="true"/>
-          <foreground color="-1973791"/>
-          <text value="Procurar"/>
         </properties>
       </component>
       <component id="e86b6" class="javax.swing.JLabel">
@@ -84,19 +73,9 @@
           <verticalTextPosition value="0"/>
         </properties>
       </component>
-      <component id="ff168" class="javax.swing.JButton" binding="GerarHashBtn">
-        <constraints>
-          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-11688636"/>
-          <foreground color="-1973791"/>
-          <text value="Gerar Hash"/>
-        </properties>
-      </component>
       <component id="e5a2b" class="javax.swing.JLabel">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false">
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="105" height="16"/>
           </grid>
         </constraints>
@@ -111,21 +90,9 @@
           <verticalTextPosition value="3"/>
         </properties>
       </component>
-      <component id="62de6" class="javax.swing.JButton" binding="SairBtn">
-        <constraints>
-          <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-4583133"/>
-          <foreground color="-1973791"/>
-          <hideActionText value="false"/>
-          <text value="Sair"/>
-          <toolTipText value="Close the application"/>
-        </properties>
-      </component>
       <component id="d0355" class="javax.swing.JButton" binding="HelpBtn">
         <constraints>
-          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-14737633"/>
@@ -157,6 +124,28 @@
           <font style="3"/>
           <foreground color="-1973791"/>
           <text value="SHA-256"/>
+        </properties>
+      </component>
+      <component id="ff168" class="javax.swing.JButton" binding="GerarHashBtn">
+        <constraints>
+          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-11688636"/>
+          <foreground color="-1973791"/>
+          <text value="Gerar Hash"/>
+        </properties>
+      </component>
+      <component id="62de6" class="javax.swing.JButton" binding="SairBtn">
+        <constraints>
+          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-4583133"/>
+          <foreground color="-1973791"/>
+          <hideActionText value="false"/>
+          <text value="Sair"/>
+          <toolTipText value="Close the application"/>
         </properties>
       </component>
     </children>
