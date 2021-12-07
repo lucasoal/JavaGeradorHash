@@ -67,7 +67,7 @@ public class GerarHash {
             hash = hashHexadecimal.toString();
 
             // System.out.println("\nSequência de Bytes da HASH Gerada pelo Algoritmo " + hash);
-            System.out.printf("\n" + "[" + hsh +"] "+ hash +"\t→ " + pwd );
+            System.out.printf("\n" + "[" + hsh + "]\t" + "→\t" + hash + "\t→\t" + pwd);
             MethodGeraArquivo(hsh, pwd, hash);
 
         } catch (IOException erro) {}
