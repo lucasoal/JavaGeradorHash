@@ -30,7 +30,7 @@
           <font name="Consolas" style="2"/>
           <foreground color="-15921907"/>
           <horizontalAlignment value="2"/>
-          <text value="Caminho do arquivo. Ex: C:\User\Desktop"/>
+          <text value="/home/lucasomar/Development/JavaGeradorHash"/>
           <verifyInputWhenFocusTarget value="true"/>
           <visible value="true"/>
         </properties>

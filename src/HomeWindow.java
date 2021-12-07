@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 
 public class HomeWindow extends JFrame {
@@ -30,6 +31,8 @@ public class HomeWindow extends JFrame {
                     GerarHash.main(pwd,SetHashType);
                     JOptionPane.showMessageDialog(null, SetHashType + " selecionada");
                 } catch (NoSuchAlgorithmException ex) {
+                    ex.printStackTrace();
+                } catch (IOException ex) {
                     ex.printStackTrace();
                 }
             }

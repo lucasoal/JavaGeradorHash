@@ -34,6 +34,21 @@ public class GerarHash {
             e.printStackTrace();
         }
     }
+    // /home/lucasomar/Development/JavaGeradorHash
+    // fazer salvar todos os paths em um arquivo
+    // recursivamente ler cada local e gerar a hash do arquivo
+    public void MethodDisplayContent(File diretorio, String hsh) throws IOException, NoSuchAlgorithmException {
+        GerarHash generate = new GerarHash();
+        File[] files = diretorio.listFiles();
+
+            for(File file : files){
+                String fullPath = file.getCanonicalPath(); // recebe o caminho completo do diretório
+                generate.MethodCalculaHash(fullPath, hsh);
+                if (file.isDirectory()){
+
+                }
+            }
+    }
 
     public String MethodCalculaHash(String pwd, String hsh) throws NoSuchAlgorithmException {
         File arquivo = new File(pwd);
@@ -48,7 +63,10 @@ public class GerarHash {
             }
 
             hash = hashHexadecimal.toString();
-            System.out.println("\nSequência de Bytes da HASH Gerada pelo Algoritmo " + hash);
+//            System.out.println("\nSequência de Bytes da HASH Gerada pelo Algoritmo " + hash);
+            System.out.printf("\n" + "[" + hsh +"] "+ hash +"\t→ " + pwd );
+            //            MethodGeraArquivo(pwd, hash);
+
 
         } catch (IOException erro) {}
         return hash;
@@ -64,13 +82,13 @@ public class GerarHash {
         catch (IOException erro){}
     }
 
-    public static void main(String pwd, String hsh) throws NoSuchAlgorithmException  {
-        GerarHash GH;
-        GH = new GerarHash();
+    public static void main(String pwd, String hsh) throws NoSuchAlgorithmException, IOException {
+        GerarHash GH = new GerarHash();
 
         GH.SistemaArquivos(pwd);
+        GH.MethodDisplayContent(new File(pwd), hsh);
 
         String hash = GH.MethodCalculaHash(pwd,hsh);
-        GH.MethodGeraArquivo(pwd,hash);
+//        GH.MethodGeraArquivo(pwd,hash);
     }
 }
