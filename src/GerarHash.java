@@ -35,18 +35,15 @@ public class GerarHash {
         }
     }
     // /home/lucasomar/Development/JavaGeradorHash
+    //
     // fazer salvar todos os paths em um arquivo
     // recursivamente ler cada local e gerar a hash do arquivo
     public void MethodDisplayContent(File diretorio, String hsh) throws IOException, NoSuchAlgorithmException {
-        GerarHash generate = new GerarHash();
+        GerarHash gerahash = new GerarHash();
         File[] files = diretorio.listFiles();
-
             for(File file : files){
                 String fullPath = file.getCanonicalPath(); // recebe o caminho completo do diretório
-                generate.MethodCalculaHash(fullPath, hsh);
-                if (file.isDirectory()){
-
-                }
+                gerahash.MethodCalculaHash(fullPath, hsh);
             }
     }
 
@@ -61,22 +58,22 @@ public class GerarHash {
             for (byte b : bytesSaidaHash) {
                 hashHexadecimal.append(String.format("%02X", 0xFF & b));
             }
-
             hash = hashHexadecimal.toString();
-//            System.out.println("\nSequência de Bytes da HASH Gerada pelo Algoritmo " + hash);
-            System.out.printf("\n" + "[" + hsh +"] "+ hash +"\t→ " + pwd );
-            //            MethodGeraArquivo(pwd, hash);
 
+            // System.out.println("\nSequência de Bytes da HASH Gerada pelo Algoritmo " + hash);
+            System.out.printf("\n" + "[" + hsh +"] "+ hash +"\t→ " + pwd );
+            MethodGeraArquivo(hsh, pwd, hash);
 
         } catch (IOException erro) {}
         return hash;
     }
 
-    public void MethodGeraArquivo(String pwd,String hash){
+    public void MethodGeraArquivo(String hsh, String pwd, String hash){
+        boolean append = true;
         try{
-            saida = new FileOutputStream("./log.txt");
+            saida = new FileOutputStream(new File("./log.txt"), true);
             escritor = new DataOutputStream(saida);
-            escritor.writeUTF("\n" + pwd + "\t" + hash + "\n");
+            escritor.writeUTF("\n" +"["+ hsh +"] "+ hash +"\t→ "+ pwd +"\t");
             saida.close();
         }
         catch (IOException erro){}
