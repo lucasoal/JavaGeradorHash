@@ -44,6 +44,12 @@ public class GerarHash {
             for(File file : files){
                 String fullPath = file.getCanonicalPath(); // recebe o caminho completo do diretório
                 gerahash.MethodCalculaHash(fullPath, hsh);
+                    if (file.isDirectory()){
+                        String fullPath2 = file.getCanonicalPath();
+                        gerahash.MethodDisplayContent(new File(fullPath2), hsh);
+//                        gerahash.MethodGeraArquivo(hsh, String.valueOf(diretorio), "teste");
+//                        gerahash.MethodCalculaHash(fullPath,hsh);
+                    }
             }
     }
 
