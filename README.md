@@ -1,6 +1,6 @@
 # - Java Gerador Hash - [<img src="https://upload.wikimedia.org/wikipedia/pt/3/30/Java_programming_language_logo.svg" alt="Java Logo" width="20" Title="Java" align='right'>](https://dev.java/)
 
-[Working Video - Youtube](https://www.youtube.com/watch?v=UJZzpGr04xU)
+### [─ Youtube Video ─](https://www.youtube.com/watch?v=UJZzpGr04xU)
 
 ## About the project
 
@@ -49,7 +49,7 @@ Connect to my [Linkedin](https://linkedin.com/in/lucasomarandradeleal)
 
 
 - **Format**
-  - [Method] → Hash → Directory Path
+  - `[Method] Hash → Directory Path`
   - `[MD5] 8C9C7BFEE84EDA5C78AF2985ADB40C9C	→ /home/user/Desktop/folder/image1.png`
 
 ## Getting Started
@@ -71,7 +71,6 @@ $ cd JavaGeradorHash
 ## Built With
 
 - [Java](https://dev.java/) - Build the native app using **Java**
-- [Android Debug Bridge (ADB)](https://developer.android.com/studio/command-line/adb) - Backend application
 
 ## Support tools
 

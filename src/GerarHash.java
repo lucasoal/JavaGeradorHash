@@ -28,7 +28,8 @@ public class GerarHash {
             }
             else {
                 JOptionPane.showMessageDialog(null,
-                "Arquivo (" + stream + ") não encontrado!!!","Atenção!!!", JOptionPane.ERROR_MESSAGE);
+                "Arquivo (" + stream + ") não encontrado!!!" +
+                        "\nLembre-se de colocar o caminho COMPLETO do diretório/arquivo","Atenção!!!", JOptionPane.ERROR_MESSAGE);
             }
         } catch (HeadlessException e) {
             e.printStackTrace();
